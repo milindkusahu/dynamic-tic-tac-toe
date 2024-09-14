@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const initialBoard = (size) => Array(size * size).fill(null);
 
 const useTicTacToe = (boardSize) => {
   const [board, setBoard] = useState(initialBoard(boardSize));
   const [isXNext, setIsXNext] = useState(true);
+
+  useEffect(() => {
+    // When the boardSize changes, reset the board accordingly
+    setBoard(initialBoard(boardSize));
+    setIsXNext(true); // Reset the turn to X
+  }, [boardSize]);
 
   const generateWinningPatterns = () => {
     const patterns = [];
@@ -96,6 +102,7 @@ const useTicTacToe = (boardSize) => {
 
   const resetGame = () => {
     setBoard(initialBoard(boardSize));
+    setIsXNext(true); // Reset to player X's turn
   };
 
   return { board, handleClick, getStatusMessage, resetGame };
