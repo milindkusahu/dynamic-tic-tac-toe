@@ -64,5 +64,3 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 This project is open-source and available under the [MIT License](./LICENSE).
 
 ---
-
-This README file gives an overview of the project, its features, setup instructions, and future enhancements. You can customize the sections as needed based on your project’s requirements.
